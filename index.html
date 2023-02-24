@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🍵 I need Tea</title>
+    <style>
+      h1 {
+        text-align: center;
+        color: #6d9886;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-size: 40px;
+      }
+      h2 {
+        text-align: center;
+        border: 1px solid #6d9886;
+        padding: 15px;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 4px;
+      }
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 50%;
+        max-height: 50%;
+        border-width: 10px;
+        border-radius: 10px;
+      }
+      p {
+        line-height: 1.5;
+        font-size: 15px;
+        line-height: 25px;
+      }
+      button {
+        display: block;
+        margin: 0 auto;
+        background-color: #6d9886;
+        color: #8c382b;
+        font-size: 20px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        transition: all 150ms ease-in-out;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+      button:hover {
+        opacity: 0.9;
+        cursor: pointer;
+        background: #6d98;
+      }
+      ul {
+          padding: 0px;
+      }
+      li {
+          list-style: none;
+          display: inline-block;
+          margin: 0 auto;
+          padding: 10px 20px;
+          border-radius: 10px;
+          transition: all 200ms ease-in-out;
+          max-width: 400px;
+      }
+
+      li:hover {
+        background: #6d9886;
+        text-decoration: underline;
+      }
+      a {
+        text-decoration: none;
+        color: #8c382b;;
+      }
+      .titleRetailers {
+          font-weight: 600;
+      }
+      .teaImage {
+          background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/026/270/original/miti-DFtvglCPWjY-unsplash.jpg?1643829121");
+          border-radius: 10px;
+          background-size: contain;
+      }
+      .container {
+        font-family: Gill Sans, sans-serif;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px 40px;
+        background: linear-gradient(135deg, #fdfcfb 0%, #ede8e6 100%);
+        border-radius: 20px;
+      }
+  
+      .wiki {
+        display: block;
+        margin-top: 20px;
+        text-decoration: none;
+        font-size: 13px;
+      }
+      .wiki:hover {
+        text-decoration: underline;
+      }
+      .footer {
+        text-align: center;
+      }
+      .usaRetailers {
+          text-align: center;
+      }
+      
+    </style>
+  </head>
+  <body>
+      <div class="teaImage">
+    <div class="container">
+
+      <h1>I need Tea</h1>
+      <h2>A finding aid for tea resources</h2>
+      
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/026/270/original/miti-DFtvglCPWjY-unsplash.jpg?1643829121"
+        alt="Image by Miti on UnSplash."
+      />
+      <p>
+        Tea is an aromatic beverage prepared by pouring hot or boiling water
+        over cured or fresh leaves of Camellia Sinensis, an evergreen shrub
+        native to China and other East Asian countries. It can also refer to a
+        drink composed of herbal or floral elements, like roobois or lavender,
+        used by itself or combined with the Camellia Sinensis.
+        <br />
+         <p>
+    Below are resources available to peruse teas according to your
+        preferences!
+      <a href="https://en.wikipedia.org/wiki/Tea" target="_blank" class="wiki">
+        <em>Learn more about tea on Wikipedia!</em>
+      </a>
+      </p>
+      <p>
+    <div class="usaRetailers"> <span class="titleRetailers"> Online Retailers</span>
+    <ul>
+        <li>
+           <a href="https://www.adagio.com/" target="_blank"> Adagio Tea </a>
+        </li>
+         <li>
+           <a href="https://www.davidstea.com/us_en/home/#" target="_blank"> David's Tea </a>
+        </li>
+        <li>
+           <a href="https://us.palaisdesthes.com/en_us/?utm_campaign={id_affili%C3%A9}&utm_source=ShareASale&utm_medium=affiliation&sscid=21k6_1rjc2" target="_blank"> Palais des Thés </a>
+        </li>
+        <li>
+           <a href="https://tea-drunk.com/?sscid=21k6_1rrzf&" target="_blank"> Tea Drunk </a>
+        </li>
+        <li>
+           <a href="https://www.theteaspot.com/?sscid=21k6_1rh7p" target="_blank"> The Tea Spot </a>
+        </li>
+    </ul>
+    </div>
+      </p>
+      <br />
+      <button class="buyButton"><strong>Find Tea 🍵</strong></button>
+      <p class="footer">Coded by Alexandra Curran</p>
+    </div>
+    </div>
+    <script>
+      function updateHeading(newHeading) {
+        let heading = document.querySelector("h2");
+        heading.innerHTML = newHeading;
+      }
+      function buy() {
+        let name = prompt("What is your name?");
+        let email = prompt("What is your email?");
+        let teaType = prompt("What is your favorite tea?");
+        if (name.length > 0 && email.length) {
+          updateHeading(
+            `🍵 ${name}, we'll be in touch by email soon. Have a lovely day and drink lots of ${teaType} tea!`
+          );
+        } else {
+          updateHeading(`No info, no tea for you! 😅`);
+        }
+      }
+      let buyButton = document.querySelector(".buyButton");
+      buyButton.addEventListener("click", buy);
+    </script>
+  </body>
+</html>
